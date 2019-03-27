@@ -1,5 +1,6 @@
 package com.example.jhonatasrm.maiornumero;
 
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,14 +41,17 @@ public class MainActivity extends AppCompatActivity {
     public void compara1(View view) {
         if(valorGerado1 > valorGerado2){
             resultado1.setText(R.string.acertou);
+            resultado2.setText("");
             acertou ++;
             contador = contador + 1;
         }else if (valorGerado2 > valorGerado1){
             resultado1.setText(R.string.errou);
+            resultado2.setText("");
             errou ++;
             contador = contador + 1;
         }else if (valorGerado1 == valorGerado2){
             resultado1.setText(R.string.numeros_iguais);
+            resultado2.setText("");
         }else{
             return;
         }
@@ -59,14 +63,17 @@ public class MainActivity extends AppCompatActivity {
 
         if(valorGerado2 > valorGerado1){
             resultado1.setText(R.string.acertou);
+            resultado2.setText("");
             acertou ++;
             contador = contador + 1;
         }else if(valorGerado1 > valorGerado2 ){
             resultado1.setText(R.string.errou);
+            resultado2.setText("");
             errou ++;
             contador = contador + 1;
         }else if (valorGerado1 == valorGerado2){
             resultado1.setText(R.string.numeros_iguais);
+            resultado2.setText("");
         }else{
             return;
         }
