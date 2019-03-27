@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView numero1, numero2, resultado;
+    TextView numero1, numero2, resultado1, resultado2;
     int valorGerado1, valorGerado2;
     int contador;
     int acertou;
@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         numero1 = findViewById(R.id.numero1);
         numero2 = findViewById(R.id.numero2);
-        resultado = findViewById(R.id.resultado);
+        resultado1 = findViewById(R.id.resultado1);
+        resultado2 = findViewById(R.id.resultado2);
         random = new Random();
 
         generate();
@@ -38,15 +39,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void compara1(View view) {
         if(valorGerado1 > valorGerado2){
-            resultado.setText("ACERTOU !!!");
+            resultado1.setText(R.string.acertou);
             acertou ++;
             contador = contador + 1;
         }else if (valorGerado2 > valorGerado1){
-            resultado.setText("ERROU !!!");
+            resultado1.setText(R.string.errou);
             errou ++;
             contador = contador + 1;
         }else if (valorGerado1 == valorGerado2){
-            resultado.setText("NUMEROS IGUAIS !!!");
+            resultado1.setText(R.string.numeros_iguais);
         }else{
             return;
         }
@@ -57,15 +58,15 @@ public class MainActivity extends AppCompatActivity {
     public void compara2(View view) {
 
         if(valorGerado2 > valorGerado1){
-            resultado.setText("ACERTOU !!!");
+            resultado1.setText(R.string.acertou);
             acertou ++;
             contador = contador + 1;
         }else if(valorGerado1 > valorGerado2 ){
-            resultado.setText("ERROU !!!");
+            resultado1.setText(R.string.errou);
             errou ++;
             contador = contador + 1;
         }else if (valorGerado1 == valorGerado2){
-            resultado.setText("NUMEROS IGUAIS !!!");
+            resultado1.setText(R.string.numeros_iguais);
         }else{
             return;
         }
@@ -75,7 +76,10 @@ public class MainActivity extends AppCompatActivity {
     public void generate(){
 
         if(contador == 10){
-            resultado.setText("Você acertou "+acertou+" e errou "+errou);
+            resultado1.setText(R.string.voce_acertou);
+            resultado1.append(" "+ Integer.toString(acertou));
+            resultado2.setText(R.string.voce_errou);
+            resultado2.append(" "+ Integer.toString(errou));
             contador = 0;
             errou = 0;
             acertou = 0;

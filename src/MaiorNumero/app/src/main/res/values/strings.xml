@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Jogo do maior número</string>
     <string name="clique_para_iniciar">Clique para iniciar</string>
+    <string name="acertou">ACERTOU !!!</string>
+    <string name="errou">ERROU !!!</string>
+    <string name="numeros_iguais">NÚMEROS IGUAIS !!!</string>
+    <string name="voce_acertou">Acertou =  </string>
+    <string name="voce_errou">Errou =  </string>
 </resources>
