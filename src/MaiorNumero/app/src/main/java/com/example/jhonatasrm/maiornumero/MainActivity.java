@@ -1,6 +1,5 @@
 package com.example.jhonatasrm.maiornumero;
 
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,13 +30,13 @@ public class MainActivity extends AppCompatActivity {
         resultado2 = findViewById(R.id.resultado2);
         random = new Random();
 
-        generate();
+        gerar();
 
         numero1.setText(Integer.toString(valorGerado1));
         numero2.setText(Integer.toString(valorGerado2));
     }
 
-
+    // onClick compara o valor clicado com o outro
     public void compara1(View view) {
         if(valorGerado1 > valorGerado2){
             resultado1.setText(R.string.acertou);
@@ -55,10 +54,11 @@ public class MainActivity extends AppCompatActivity {
         }else{
             return;
         }
-        generate();
+        gerar();
 
     }
 
+    // onClick compara o valor clicado com o outro
     public void compara2(View view) {
 
         if(valorGerado2 > valorGerado1){
@@ -77,11 +77,11 @@ public class MainActivity extends AppCompatActivity {
         }else{
             return;
         }
-        generate();
+        gerar();
     }
 
-    public void generate(){
-
+    //gera valor random e já verifica o número de jogadas para apresentar o número de erros e acertos
+    public void gerar(){
         if(contador == 10){
             resultado1.setText(R.string.voce_acertou);
             resultado1.append(" "+ Integer.toString(acertou));

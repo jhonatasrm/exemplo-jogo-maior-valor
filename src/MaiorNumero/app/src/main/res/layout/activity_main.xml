@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_marginTop="100px"
+        android:layout_marginTop="100dp"
         android:id="@+id/numero1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,4 +44,5 @@
         android:layout_gravity="bottom|center"
         android:textAlignment="center"
         android:textSize="30sp"/>
+
 </LinearLayout>
