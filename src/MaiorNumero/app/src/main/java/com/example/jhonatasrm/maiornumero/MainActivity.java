@@ -20,20 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        contador = 0;
-        acertou = 0;
-        errou = 0;
-
-        numero1 = findViewById(R.id.numero1);
-        numero2 = findViewById(R.id.numero2);
-        resultado1 = findViewById(R.id.resultado1);
-        resultado2 = findViewById(R.id.resultado2);
-        random = new Random();
-
+        configuracaoInicial();
         gerar();
-
-        numero1.setText(Integer.toString(valorGerado1));
-        numero2.setText(Integer.toString(valorGerado2));
     }
 
     // onClick compara o valor clicado com o outro
@@ -93,6 +81,22 @@ public class MainActivity extends AppCompatActivity {
         }
         valorGerado1 = random.nextInt(100);
         valorGerado2 = random.nextInt(100);
+
+        numero1.setText(Integer.toString(valorGerado1));
+        numero2.setText(Integer.toString(valorGerado2));
+    }
+
+    //configuração inicial da tela
+    public void configuracaoInicial(){
+        contador = 0;
+        acertou = 0;
+        errou = 0;
+
+        numero1 = findViewById(R.id.numero1);
+        numero2 = findViewById(R.id.numero2);
+        resultado1 = findViewById(R.id.resultado1);
+        resultado2 = findViewById(R.id.resultado2);
+        random = new Random();
 
         numero1.setText(Integer.toString(valorGerado1));
         numero2.setText(Integer.toString(valorGerado2));
